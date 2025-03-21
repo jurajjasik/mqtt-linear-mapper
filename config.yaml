@@ -1,0 +1,22 @@
+mqtt:
+  broker: "localhost"
+  port: 1883
+  # username: "your_username"
+  # password: "your_password"
+
+topics:
+- subscribe_topic: "sensor/temperature"
+  field: "value"
+  a0: 5.0
+  a1: 1.1
+  publish_topic: "processed/temperature"
+  publish_field: "transformed_value"
+
+- subscribe_topic: "sensor/pressure"
+  field: "reading"
+  a0: -2
+  a1: 0.5
+  publish_topic: "processed/pressure"
+  publish_field: "corrected_reading"
+  publish_qos: 1 # QoS 0, 1, or 2
+  retain: true # true or false
